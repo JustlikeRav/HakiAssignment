@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="singh2.ravneet.hakiassignment.fragment.SiWeb"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/tv3Singh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Singh"
+        android:layout_centerInParent="true"/>
+
+    <EditText
+        android:id="@+id/zip_et"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/tv3Singh"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Web Services"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/zip_et"/>
+
+    <TextView
+        android:id="@+id/address_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
