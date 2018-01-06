@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    tools:context="singh2.ravneet.hakiassignment.fragment.SinSet"
+    android:background="@color/yellow">
+
+   <ToggleButton
+       android:id="@+id/mute_tb_3"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:checked="false"/>
+
+   <SeekBar
+       android:id="@+id/brightness_control_sb_3"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:max="255"
+       android:layout_below="@id/mute_tb_3"
+       android:padding="15dp"
+       />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="58dp"
+        android:id="@+id/radioGroup"
+        android:layout_alignParentTop="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="yellow"
+            android:id="@+id/black_rb_3"
+            android:layout_gravity="center_horizontal"
+            android:checked="true"
+            android:textSize="25dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="green"
+            android:id="@+id/green_rb_3"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            android:textSize="25dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="purple"
+            android:id="@+id/purple_rb_3"
+            android:layout_gravity="center_horizontal"
+            android:checked="false"
+            android:textSize="25dp"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/save_btn_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_below="@+id/brightness_control_sb_3"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

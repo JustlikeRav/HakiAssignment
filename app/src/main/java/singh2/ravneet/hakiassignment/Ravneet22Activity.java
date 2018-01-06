@@ -15,7 +15,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import singh2.ravneet.hakiassignment.fragment.RaHome;
+import singh2.ravneet.hakiassignment.fragment.RavDown;
 import singh2.ravneet.hakiassignment.fragment.SiWeb;
+import singh2.ravneet.hakiassignment.fragment.SinSet;
 
 public class Ravneet22Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -78,11 +80,11 @@ public class Ravneet22Activity extends AppCompatActivity
         if (id == R.id.nav_home) {
             fm.beginTransaction().replace(R.id.frag_container, new RaHome()).commit();
         } else if (id == R.id.nav_fn) {
-
+            fm.beginTransaction().replace(R.id.frag_container, new RavDown()).commit();
         } else if (id == R.id.nav_ln) {
             fm.beginTransaction().replace(R.id.frag_container, new SiWeb()).commit();
         } else if (id == R.id.nav_settings) {
-
+            fm.beginTransaction().replace(R.id.frag_container, new SinSet()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
