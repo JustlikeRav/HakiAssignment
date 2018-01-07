@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -44,8 +45,7 @@ public class RaHome extends Fragment {
 
         //spinner
         ArrayList<String> spinner_list = new ArrayList<>();
-        String yourFilePath = getContext().getFilesDir() + "/" + "ravneet.txt";
-
+        String yourFilePath = getActivity().getFilesDir() + "/" + "ravneet.txt";
         File file = new File( yourFilePath );
 
         //Read text from file
@@ -61,10 +61,10 @@ public class RaHome extends Fragment {
             br.close();
         }
         catch (IOException e) {
-            Log.e(getContext().getPackageName(), e.getStackTrace().toString());
+            Log.e(getActivity().getPackageName(), e.getStackTrace().toString());
         }
 
-        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, spinner_list);
+        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, spinner_list);
         mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner mSpinner = getView().findViewById(R.id.spinner);
         mSpinner.setAdapter(mAdapter);

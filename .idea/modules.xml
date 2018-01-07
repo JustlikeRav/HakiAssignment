@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HakiAssignment.iml" filepath="$PROJECT_DIR$/HakiAssignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SendSMS/SendSMS.iml" filepath="$PROJECT_DIR$/SendSMS/SendSMS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

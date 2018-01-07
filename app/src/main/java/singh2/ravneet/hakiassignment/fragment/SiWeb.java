@@ -5,6 +5,8 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -32,64 +34,76 @@ import java.io.UnsupportedEncodingException;
 import singh2.ravneet.hakiassignment.R;
 
 public class SiWeb extends Fragment {
+    EditText mEditText;
+    Button mBtn;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.si_web, container, false);
+        View mView = inflater.inflate(R.layout.si_web, container, false);
+        mEditText = mView.findViewById(R.id.zip_et);
+        mBtn = mView.findViewById(R.id.webservice_btn);
+        return mView;
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url = "http://www.webservicex.net/uszip.asmx/GetInfoByZIP?USZip=93709";
-        StringRequest req = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>()
-                {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
+        mBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mEditText.getText().toString().length() == 5){
+                    RequestQueue queue = Volley.newRequestQueue(getActivity());
+                    String url = "http://www.webservicex.net/uszip.asmx/GetInfoByZIP?USZip=" + mEditText.getText().toString();
+                    StringRequest req = new StringRequest(Request.Method.GET, url,
+                            new Response.Listener<String>()
+                            {
+                                @Override
+                                public void onResponse(String response) {
+                                    try {
 
-                            InputStream is = new ByteArrayInputStream(response.getBytes("UTF-8"));
-                            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-                            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-                            Document doc = dBuilder.parse(is);
-                            Element element=doc.getDocumentElement();
-                            element.normalize();
+                                        InputStream is = new ByteArrayInputStream(response.getBytes("UTF-8"));
+                                        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+                                        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+                                        Document doc = dBuilder.parse(is);
+                                        Element element=doc.getDocumentElement();
+                                        element.normalize();
 
-                            NodeList nList = doc.getElementsByTagName("Table");
+                                        NodeList nList = doc.getElementsByTagName("Table");
 
-                            Node node = nList.item(0);
-                            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                                Element element2 = (Element) node;
-//                                tv1.setText(tv1.getText()+"\nName : " + getValue("name", element2)+"\n");
-//                                tv1.setText(tv1.getText()+"Surname : " + getValue("surname", element2)+"\n");
-//                                tv1.setText(tv1.getText()+"-----------------------");
-                                String msg = "\nName : " + getValue("CITY", element2)+"\n";
-                                Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
+                                        Node node = nList.item(0);
+                                        if (node.getNodeType() == Node.ELEMENT_NODE) {
+                                            Element element2 = (Element) node;
+                                            String msg = "\nName : " + getValue("CITY", element2)+"\n";
+                                            Toast.makeText(getActivity(), msg, Toast.LENGTH_SHORT).show();
+                                        }
+
+                                    } catch (ParserConfigurationException | IOException | SAXException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                                private String getValue(String name, Element element) {
+                                    NodeList nodeList = element.getElementsByTagName(name).item(0).getChildNodes();
+                                    Node node = nodeList.item(0);
+                                    return node.getNodeValue();
+                                }
+                            },
+                            new Response.ErrorListener()
+                            {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    // handle error response
+                                }
                             }
-
-                        } catch (ParserConfigurationException | IOException | SAXException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    private String getValue(String name, Element element) {
-                        NodeList nodeList = element.getElementsByTagName(name).item(0).getChildNodes();
-                        Node node = nodeList.item(0);
-                        return node.getNodeValue();
-                    }
-                },
-                new Response.ErrorListener()
-                {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // handle error response
-                    }
+                    );
+                    // Add the request to the RequestQueue.
+                    queue.add(req);
+                } else {
+                    Toast.makeText(getActivity(), "Zipcode less than 5 digits. That's not correct.", Toast.LENGTH_SHORT).show();
                 }
-        );
-        // Add the request to the RequestQueue.
-        queue.add(req);
+            }
+        });
+
     }
 }

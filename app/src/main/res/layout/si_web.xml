@@ -14,13 +14,16 @@
 
     <EditText
         android:id="@+id/zip_et"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberPassword"
         android:layout_centerInParent="true"
+        android:hint="Enter ZIP code"
+        android:maxLength="5"
         android:layout_below="@+id/tv3Singh"/>
 
     <Button
+        android:id="@+id/webservice_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Web Services"

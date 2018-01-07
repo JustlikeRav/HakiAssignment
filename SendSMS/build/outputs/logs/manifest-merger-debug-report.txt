@@ -1,0 +1,72 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:2:1-25:12
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\n01148757\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\126f418383f914a1ec3ae80fd007f8a7\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:2:1-25:12
+	package
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:3:5-30
+		INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+uses-permission#android.permission.SEND_SMS
+ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:7:5-66
+	android:name
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:7:22-64
+application
+ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:9:5-24:19
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\n01148757\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\126f418383f914a1ec3ae80fd007f8a7\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\n01148757\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\126f418383f914a1ec3ae80fd007f8a7\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:12:9-41
+	android:icon
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:11:9-45
+	android:allowBackup
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:13:9-40
+activity#com.net.sendsms.MainActivity
+ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:14:9-22:20
+	android:label
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:16:13-45
+	android:name
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:15:13-56
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:17:13-21:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml:20:27-74
+uses-sdk
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\n01148757\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\126f418383f914a1ec3ae80fd007f8a7\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\n01148757\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\126f418383f914a1ec3ae80fd007f8a7\AndroidManifest.xml:20:5-43
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+		ADDED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\n01148757\Desktop\HakiAssignment\SendSMS\src\main\AndroidManifest.xml

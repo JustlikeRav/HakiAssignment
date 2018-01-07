@@ -1,17 +1,10 @@
 package singh2.ravneet.hakiassignment.fragment;
 
-import android.app.Activity;
-import android.app.DownloadManager;
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,17 +14,14 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import java.net.HttpURLConnection;
 import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
 import singh2.ravneet.hakiassignment.R;
 
@@ -58,8 +48,21 @@ public class RavDown extends Fragment {
         downloadbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DownloadTask downloadTask = new DownloadTask();
-                downloadTask.execute(image_url);
+                String path = getActivity().getFilesDir().getAbsolutePath() + "/ravDir/downloaded_image.jpg";
+                File mFile = new File(path);
+                if(!mFile.exists()){
+                    DownloadTask downloadTask = new DownloadTask();
+                    downloadTask.execute(image_url);
+                } else {
+                    Toast.makeText(getActivity(), "File already exists", Toast.LENGTH_SHORT).show();
+                    mImageView.setImageDrawable(Drawable.createFromPath(path));
+                }
+
+            }
+
+            public boolean fileExist(String fname){
+                File file = getActivity().getFileStreamPath(fname);
+                return file.exists();
             }
         });
     }
@@ -93,9 +96,6 @@ public class RavDown extends Fragment {
             Log.i("Info: path", path);
             try {
                 URL url = new URL(path);
-//                URLConnection urlConnection = url.openConnection();
-//                urlConnection.connect();
-//                file_length = urlConnection.getContentLength();
 
                 HttpURLConnection huc = (HttpURLConnection) url.openConnection();
                 HttpURLConnection.setFollowRedirects(false);
@@ -108,7 +108,7 @@ public class RavDown extends Fragment {
                 /**
                  * Create a folder
                  */
-                File new_folder = new File(getContext().getFilesDir(),"ravDir");
+                File new_folder = new File(getActivity().getFilesDir(),"ravDir");
                 if (!new_folder.exists()) {
                     if (new_folder.mkdir()) {
                         Log.i("Info", "Folder succesfully created");
@@ -162,7 +162,7 @@ public class RavDown extends Fragment {
         protected void onPostExecute(String result) {
             progressDialog.hide();
             Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
-            File folder = new File(getContext().getFilesDir(),"ravDir");
+            File folder = new File(getActivity().getFilesDir(),"ravDir");
             File output_file = new File(folder, "downloaded_image.jpg");
             String path = output_file.toString();
             mImageView.setImageDrawable(Drawable.createFromPath(path));

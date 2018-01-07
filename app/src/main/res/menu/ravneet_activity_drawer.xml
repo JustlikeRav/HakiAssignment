@@ -7,19 +7,19 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/home"
-            android:title="Import" />
+            android:title="Home" />
         <item
             android:id="@+id/nav_fn"
             android:icon="@drawable/smile"
-            android:title="Gallery" />
+            android:title="Ravneet " />
         <item
             android:id="@+id/nav_ln"
             android:icon="@drawable/sad"
-            android:title="Slideshow" />
+            android:title="Singh" />
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/settings"
-            android:title="Tools" />
+            android:title="Settings" />
     </group>
 
 </menu>

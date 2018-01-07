@@ -59,11 +59,11 @@ public class SinSet extends Fragment {
             @Override
             public void onClick(View view) {
                 if(mToggleButton.isChecked()){
-                    AudioManager audioManager = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
+                    AudioManager audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
                     audioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
                 } else {
 
-                    AudioManager audioManager = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
+                    AudioManager audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
                     audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
 
                     // To set full volume
@@ -79,7 +79,7 @@ public class SinSet extends Fragment {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (Settings.System.canWrite(getContext())) {
+                    if (Settings.System.canWrite(getActivity())) {
                         // Change the screen brightness
                         setScreenBrightness(i);
                     }
@@ -143,7 +143,7 @@ public class SinSet extends Fragment {
     // Get the screen current brightness
     protected int getScreenBrightness(){
         return Settings.System.getInt(
-                getContext().getContentResolver(),
+                getActivity().getContentResolver(),
                 Settings.System.SCREEN_BRIGHTNESS,
                 0
         );
@@ -153,7 +153,7 @@ public class SinSet extends Fragment {
     public void setScreenBrightness(int brightnessValue){
         if(brightnessValue >= 0 && brightnessValue <= 255){
             Settings.System.putInt(
-                    getContext().getContentResolver(),
+                    getActivity().getContentResolver(),
                     Settings.System.SCREEN_BRIGHTNESS,
                     brightnessValue
             );
